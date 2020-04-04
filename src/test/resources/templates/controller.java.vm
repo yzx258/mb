@@ -1,0 +1,79 @@
+package $!{package.Controller};
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import lombok.extern.slf4j.Slf4j;
+import com.baomidou.mybatisplus.plugins.Page;
+import $!{package.Entity}.$!{entity};
+import $!{package.Service}.I$!{entity}Service;
+
+/**
+ * <p>
+ * $!{table.comment} 前端控制器
+ * </p>
+ *
+ * @author $!{author}
+ * @since $!{date}
+ */
+@Slf4j
+@RestController
+@RequestMapping("/$!{table.entityPath}")
+public class $!{table.controllerName} {
+
+    @Autowired
+    private I$!{entity}Service baseService;
+
+    /**
+    * 通过ID查询
+    *
+    * @param id ID
+    * @return $!{entity}
+    */
+    @GetMapping("/{id}")
+    public $!{entity} get(@PathVariable String id){
+        return baseService.selectById(id);
+    }
+
+
+    /**
+    * 分页查询信息
+    *
+    * @return 分页对象
+    */
+    @PostMapping("/page")
+    public Page<$!{entity}> page(Page<$!{entity}> entityPage, $!{entity} entity){
+        Page<$!{entity}> page = baseService.selectPage(entityPage);
+        return page;
+    }
+
+    /**
+    * 添加
+    * @param  $!{table.entityPath} 实体
+    * @return success/false
+    */
+    @PostMapping
+    public Boolean add(@RequestBody $!{entity} $!{table.entityPath}){
+        return baseService.insert($!{table.entityPath});
+    }
+
+    /**
+    * 删除
+    * @param id ID
+    * @return success/false
+    */
+    @DeleteMapping("/{id}")
+    public Boolean delete(@PathVariable String id){
+        $!{entity} $!{table.entityPath} = new $!{entity}();
+        $!{table.entityPath}.setId(id);
+        return baseService.updateById($!{table.entityPath});
+    }
+
+    /**
+    * 编辑
+    * @param  $!{table.entityPath} 实体
+    * @return success/false
+    */
+    @PutMapping
+    public Boolean edit(@RequestBody $!{entity} $!{table.entityPath}){
+        return baseService.updateById($!{table.entityPath});
+    }
+}
