@@ -12,11 +12,20 @@
         <result column="name" property="name" />
         <result column="sex" property="sex" />
         <result column="chat_flag" property="chatFlag" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <resultMap id="simpleResultMap" type="com.rbgt.mb.dto.TestDto">
+        <result property="status" column="status" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, create_time AS createTime, created_by AS createdBy, last_modified_by AS lastModifiedBy, update_time AS updateTime, name, sex, chat_flag AS chatFlag
+        id, create_time AS createTime, created_by AS createdBy, last_modified_by AS lastModifiedBy, update_time AS updateTime, name, sex, chat_flag AS chatFlag, status
     </sql>
+
+    <select id="selectMb" resultMap="simpleResultMap">
+        select id,status from mc_test
+    </select>
 
 </mapper>

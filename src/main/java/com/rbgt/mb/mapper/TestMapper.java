@@ -3,6 +3,8 @@ package com.rbgt.mb.mapper;
 import com.rbgt.mb.domain.Test;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  */
 public interface TestMapper extends BaseMapper<Test> {
 
+    List<Test> selectMb();
 }

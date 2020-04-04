@@ -1,4 +1,5 @@
 package com.rbgt.mb.controller;
+import com.rbgt.mb.mapper.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,9 @@ public class TestController {
     @Autowired
     private ITestService baseService;
 
+    @Autowired
+    private TestMapper mp;
+
     /**
     * 通过ID查询
     *
@@ -30,6 +34,7 @@ public class TestController {
     */
     @GetMapping("/{id}")
     public Test get(@PathVariable String id){
+        System.out.println(mp.selectMb().size());
         return baseService.selectById(id);
     }
 

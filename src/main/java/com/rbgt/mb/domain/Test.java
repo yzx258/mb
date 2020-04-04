@@ -1,12 +1,12 @@
 package com.rbgt.mb.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.yiautos.core.mp.model.Model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -40,6 +40,7 @@ public class Test extends Model<Test> {
     private Integer sex;
     @TableField("chat_flag")
     private Integer chatFlag;
+    private Integer status;
 
     @Override
     protected Serializable pkVal() {return id;}

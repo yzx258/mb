@@ -1,9 +1,9 @@
 package com.rbgt.mb.service.impl;
 
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.rbgt.mb.domain.Test;
 import com.rbgt.mb.mapper.TestMapper;
 import com.rbgt.mb.service.ITestService;
-import com.yiautos.core.mp.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
