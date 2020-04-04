@@ -25,7 +25,7 @@
     </sql>
 
     <select id="selectMb" resultMap="simpleResultMap">
-        select id,status from mc_test
+        select id,status from ms_test
     </select>
 
 </mapper>

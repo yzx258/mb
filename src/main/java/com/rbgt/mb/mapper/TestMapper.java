@@ -2,6 +2,7 @@ package com.rbgt.mb.mapper;
 
 import com.rbgt.mb.domain.Test;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.rbgt.mb.dto.TestDto;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ import java.util.List;
  */
 public interface TestMapper extends BaseMapper<Test> {
 
-    List<Test> selectMb();
+    List<TestDto> selectMb();
 }

@@ -1,4 +1,5 @@
 package com.rbgt.mb.controller;
+import com.rbgt.mb.dto.TestDto;
 import com.rbgt.mb.mapper.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -6,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.rbgt.mb.domain.Test;
 import com.rbgt.mb.service.ITestService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -34,7 +37,10 @@ public class TestController {
     */
     @GetMapping("/{id}")
     public Test get(@PathVariable String id){
-        System.out.println(mp.selectMb().size());
+        List<TestDto> tests = mp.selectMb();
+        tests.stream().forEach(e -> {
+            System.out.println(e.toString());
+        });
         return baseService.selectById(id);
     }
 

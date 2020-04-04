@@ -8,22 +8,22 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 
 mybatis-plus:
-  mapper-locations: classpath*:mapper/*Mapper.xml #Ö¸¶¨É¨ÃèMapper.xmlÎÄ¼ş¹æÔò
-  typeAliasesPackage: com.yiautos.**.domain #Ö¸¶¨É¨Ãè¼ò»¯ÀàĞÍµÄÊµÌåÄ¿Â¼ÎÄ¼ş
+  mapper-locations: classpath*:mapper/*Mapper.xml #æŒ‡å®šæ‰«æMapper.xmlæ–‡ä»¶è§„åˆ™
+  typeAliasesPackage: com.rbgt.**.domain #æŒ‡å®šæ‰«æç®€åŒ–ç±»å‹çš„å®ä½“ç›®å½•æ–‡ä»¶
   global-config:
-    #Ö÷¼üÀàĞÍ  0:"Êı¾İ¿âID×ÔÔö", 1:"ÓÃ»§ÊäÈëID",2:"È«¾ÖÎ¨Ò»ID (Êı×ÖÀàĞÍÎ¨Ò»ID)", 3:"È«¾ÖÎ¨Ò»ID UUID";
+    #ä¸»é”®ç±»å‹  0:"æ•°æ®åº“IDè‡ªå¢", 1:"ç”¨æˆ·è¾“å…¥ID",2:"å…¨å±€å”¯ä¸€ID (æ•°å­—ç±»å‹å”¯ä¸€ID)", 3:"å…¨å±€å”¯ä¸€ID UUID";
     id-type: 0
-    #×Ö¶Î²ßÂÔ 0:"ºöÂÔÅĞ¶Ï",1:"·Ç NULL ÅĞ¶Ï"),2:"·Ç¿ÕÅĞ¶Ï"
+    #å­—æ®µç­–ç•¥ 0:"å¿½ç•¥åˆ¤æ–­",1:"é NULL åˆ¤æ–­"),2:"éç©ºåˆ¤æ–­"
     field-strategy: 1
-    #ÍÕ·åÏÂ»®Ïß×ª»»
+    #é©¼å³°ä¸‹åˆ’çº¿è½¬æ¢
     db-column-underline: true
-    #Ë¢ĞÂmapper µ÷ÊÔÉñÆ÷
+    #åˆ·æ–°mapper è°ƒè¯•ç¥å™¨
     refresh-mapper: true
-    #Êı¾İ¿â´óĞ´ÏÂ»®Ïß×ª»»
+    #æ•°æ®åº“å¤§å†™ä¸‹åˆ’çº¿è½¬æ¢
     #capital-mode: true
 
-  configuration:
-    map-underscore-to-camel-case: true
-    #¿ªÆôÈÕÖ¾´òÓ¡sql
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    cache-enabled: true
+    configuration:
+      map-underscore-to-camel-case: true
+      #å¼€å¯æ—¥å¿—æ‰“å°sql
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      cache-enabled: true

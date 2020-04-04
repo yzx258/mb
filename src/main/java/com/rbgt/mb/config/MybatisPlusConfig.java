@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @author MyIreland
  */
 @Configuration // 容器配置，主要使用MP的分页插件
-@MapperScan("com.yiautos.microstore.**.mapper") // 指定扫描Mapper包路径，这样就不用每个Mapper文件添加@Mapper注解
+@MapperScan("com.rbgt.mb.**.mapper") // 指定扫描Mapper包路径，这样就不用每个Mapper文件添加@Mapper注解
 public class MybatisPlusConfig {
     /**
      * 分页插件
