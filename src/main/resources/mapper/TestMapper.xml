@@ -16,7 +16,7 @@
     </resultMap>
 
     <resultMap id="simpleResultMap" type="com.rbgt.mb.dto.TestDto">
-        <result property="status" column="status" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <result property="status" column="status" typeHandler="com.rbgt.mb.enums.RbgtEnumUtis"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->

@@ -44,4 +44,19 @@ public class Test extends Model<Test> {
 
     @Override
     protected Serializable pkVal() {return id;}
+
+    @Override
+    public String toString() {
+        return "Test{" +
+                "id='" + id + '\'' +
+                ", createTime=" + createTime +
+                ", createdBy='" + createdBy + '\'' +
+                ", lastModifiedBy='" + lastModifiedBy + '\'' +
+                ", updateTime=" + updateTime +
+                ", name='" + name + '\'' +
+                ", sex=" + sex +
+                ", chatFlag=" + chatFlag +
+                ", status=" + status +
+                '}';
+    }
 }

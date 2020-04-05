@@ -1,6 +1,7 @@
 package com.rbgt.mb.controller;
 import com.rbgt.mb.dto.TestDto;
 import com.rbgt.mb.mapper.TestMapper;
+import com.rbgt.mb.respons.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ import java.util.List;
  * @since 2020-04-04
  */
 @Slf4j
+@BaseResponse
 @RestController
 @RequestMapping("/test")
 public class TestController {
@@ -36,12 +38,12 @@ public class TestController {
     * @return Test
     */
     @GetMapping("/{id}")
-    public Test get(@PathVariable String id){
+    public List<TestDto> get(@PathVariable String id){
         List<TestDto> tests = mp.selectMb();
         tests.stream().forEach(e -> {
             System.out.println(e.toString());
         });
-        return baseService.selectById(id);
+        return tests;
     }
 
 

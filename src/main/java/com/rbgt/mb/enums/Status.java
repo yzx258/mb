@@ -16,7 +16,6 @@ import lombok.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true)
 @JsonFormat(shape = Shape.OBJECT)
 public enum Status {
 
@@ -27,4 +26,8 @@ public enum Status {
     private int code;
     private String name;
 
+    @Override
+    public String toString() {
+        return code+"";
+    }
 }
