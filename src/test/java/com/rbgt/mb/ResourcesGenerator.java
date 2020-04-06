@@ -33,7 +33,7 @@ public class ResourcesGenerator {
     @Test
     public void generateCode() {
         boolean serviceNameStartWithI = true;//user -> UserService, 设置成true: user -> IUserService
-        generateByTables(serviceNameStartWithI, "ms_test");
+        generateByTables(serviceNameStartWithI, "ms_user");
     }
 
     private void generateByTables(boolean serviceNameStartWithI, String... tableNames) {

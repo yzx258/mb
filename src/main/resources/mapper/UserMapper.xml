@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.rbgt.mb.mapper.TestMapper">
+<mapper namespace="com.rbgt.mb.mapper.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.rbgt.mb.domain.Test">
+    <resultMap id="BaseResultMap" type="com.rbgt.mb.domain.User">
         <id column="id" property="id" />
         <result column="create_time" property="createTime" />
         <result column="created_by" property="createdBy" />
@@ -11,11 +11,11 @@
         <result column="update_time" property="updateTime" />
         <result column="name" property="name" />
         <result column="sex" property="sex" />
-        <result column="chat_flag" property="chatFlag" />
         <result column="status" property="status" />
+        <result column="chat_flag" property="chatFlag" />
     </resultMap>
 
-    <resultMap id="simpleResultMap" type="com.rbgt.mb.dto.TestDto">
+    <resultMap id="simpleResultMap" type="com.rbgt.mb.dto.UserDto">
         <result property="status" column="status" typeHandler="com.rbgt.mb.enums.RbgtEnumUtis"/>
     </resultMap>
 
@@ -25,7 +25,7 @@
     </sql>
 
     <select id="selectMb" resultMap="simpleResultMap">
-        select id,status from ms_test
+        select id,status from ms_user
     </select>
 
 </mapper>

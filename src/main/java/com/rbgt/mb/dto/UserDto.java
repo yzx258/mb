@@ -20,7 +20,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public class TestDto {
+public class UserDto {
     @JsonProperty("id")
     private String id;
     @JsonProperty("status")
